@@ -20,5 +20,11 @@
 
 <ion-content padding>
     <angular2-fullcalendar id="myCalendar" [options]="calendarOptions"></angular2-fullcalendar>
+    
+    <ion-fab bottom right>
+      <button ion-fab icon-only (click)="goToForm()">
+        <ion-icon ios="ios-add-circle" md="md-add-circle"></ion-icon>
+      </button>
+    </ion-fab>
 
 </ion-content>

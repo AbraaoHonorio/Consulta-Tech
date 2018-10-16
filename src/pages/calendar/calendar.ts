@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { ResultPage } from '../result/result';
+import { FormAtendimentoPage } from '../form-atendimento/form-atendimento';
 
 /**
  * Generated class for the CalendarPage page.
@@ -25,6 +27,11 @@ export class CalendarPage {
   initializeCalendarOptions(){
    
     this.calendarOptions = {
+      ignoreTimezone: false,
+      monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
+      monthNamesShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
+      dayNames: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sabado'],
+      dayNamesShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
       header: {
         left: 'title',
         right: 'month,agendaWeek,agendaDay,agendaFourDay,'
@@ -35,9 +42,15 @@ export class CalendarPage {
       views: {
         agendaFourDay: {
             type: 'listYear',
-            buttonText: 'All'
+            buttonText: 'Lista'
         }
       },
+      buttonText: {
+        today: "Hoje",
+        month: "Mês",
+        week: "Semana",
+        day: "Dia"
+    },
    //   theme:'jquery-ui',
       height: 450,
       fixedWeekCount : false,
@@ -56,61 +69,65 @@ export class CalendarPage {
         },
         {
           title: 'Long Event',
-          start: '2018-09-07',
-          end: '2018-09-10'
+          start: '2018-10-07',
+          end: '2018-10-10'
         },
         {
           id: 999,
           title: 'Repeating Event',
-          start: '2018-09-09T16:00:00'
+          start: '2018-10-09T16:00:00'
         },
         {
           id: 999,
           title: 'Repeating Event',
-          start: '2018-09-16T16:00:00'
+          start: '2018-10-16T16:00:00'
         },
         {
           title: 'Conference',
-          start: '2018-09-11',
-          end: '2018-09-13'
+          start: '2018-10-11',
+          end: '2018-10-13'
         },
         {
           title: 'Meeting',
-          start: '2018-09-12T10:30:00',
-          end: '2018-09-12T12:30:00'
+          start: '2018-10-12T10:30:00',
+          end: '2018-10-12T12:30:00'
         },
         {
           title: 'Lunch',
-          start: '2018-09-12T12:00:00'
+          start: '2018-10-12T12:00:00'
         },
         {
           title: 'Meeting',
-          start: '2018-09-12T14:30:00'
+          start: '2018-10-12T14:30:00'
         },
         {
           title: 'Happy Hour',
-          start: '2018-09-12T17:30:00'
+          start: '2018-10-12T17:30:00'
         },
         {
           title: 'Dinner',
-          start: '2018-09-12T20:00:00'
+          start: '2018-10-12T20:00:00'
         },
         {
           title: 'Birthday Party',
-          start: '2018-09-13T07:00:00'
+          start: '2018-10-13T07:00:00'
         },
         {
           title: 'Click for Google',
           url: 'http://google.com/',
-          start: '2018-09-28'
+          start: '2018-10-28'
         }
       ],
       eventClick: function(calEvent, jsEvent, view) {
                 console.log(calEvent);
                 localStorage.setItem( 'EventData', calEvent.title );
-                window.location.assign('#/result')
+                 window.location.assign('#/result');
             }
     };  
+  }
+
+  goToForm(){
+    this.navCtrl.push(FormAtendimentoPage);
   }
 
 }
