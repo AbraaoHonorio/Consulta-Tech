@@ -1,3 +1,4 @@
+import { LoginPage } from './../pages/login/login';
 import { Calendar1Page } from './../pages/calendar1/calendar1';
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
@@ -19,7 +20,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   //rootPage:string = 'HomePage';
-  rootPage:any = CalendarPage;
+  rootPage:any = LoginPage;
   appMenuItems: Array<MenuItem>;
   menuConfiguracao: MenuItem;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
