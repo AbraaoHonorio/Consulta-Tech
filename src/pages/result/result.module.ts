@@ -9,5 +9,6 @@ import { ResultPage } from './result';
   imports: [
     IonicPageModule.forChild(ResultPage),
   ],
+  
 })
 export class ResultPageModule {}
