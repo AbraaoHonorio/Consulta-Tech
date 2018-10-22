@@ -1,4 +1,23 @@
 page-form-atendimento {
     height: 100%;
     display: block;
+
+    ion-item.item-input {
+        padding-left: 20px;
+        width: 100%;
+        height: 100%;
+    }
+
+    ion-select{
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .buttoSeach {
+        width: 60px;
+        height: 100px;
+    }
+    .item .row, .item .col {
+        padding: 0;
+      }
 }
