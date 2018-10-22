@@ -1,0 +1,120 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center class="oleo-script">Paciente</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="fechar()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="showSendPhoto()">
+        <ion-icon name="camera"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<!-- -->
+<ion-content class="auth-page; main-view">
+  <div class="login-content; modal_content">
+
+    <!-- Logo -->
+    <div padding text-center>
+      <div class="logo"></div>
+      <h2 ion-text class="text-primary">
+        <strong>Cliente</strong> FULANO DE TAL
+      </h2>
+      
+
+    </div>
+    <!-- Login form -->
+    <form class="list-form" [formGroup]="form">
+
+      <img src="{{ photo }}" alt="" style="width: 100%">
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="person" item-start class="text-primary"></ion-icon>
+          Nome
+        </ion-label>
+        <ion-input type="text" formControlName="nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="finger-print" item-start class="text-primary"></ion-icon>
+          CPF
+        </ion-label>
+        <ion-input   [brmasker]="{mask:'000.000.000-00', len:14}" [(ngModel)]="cpf" name="cpf" formControlName="cpf"> </ion-input>
+
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="calendar" item-start class="text-primary"></ion-icon>
+          Data de nascimento
+          <div>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
+          </div>
+
+        </ion-label>
+
+        <ion-input type="date" formControlName="dataNascimento"></ion-input>
+      </ion-item>
+
+      <div class="row">
+        <div class="col">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="phone-portrait" item-start class="text-primary"></ion-icon>
+              Celular
+            </ion-label>
+            <ion-input  [brmasker]="{mask:'(00) 00000-0000', len:15}" type="text" formControlName="celular"></ion-input>
+          </ion-item>
+        </div>
+        <div class="col">
+          <ion-item>
+            <ion-label floating>
+              <ion-icon name="call" item-start class="text-primary"></ion-icon>
+              Telefone
+            </ion-label>
+            <ion-input  [brmasker]="{mask:'(00) 0000-0000', len:14}" type="text" formControlName="telefone"></ion-input>
+          </ion-item>
+        </div>
+      </div>
+
+      <ion-item no-lines>
+        <ion-label> Este paciente aceita receber SMS?</ion-label>
+        <ion-checkbox color="secondary" checked="false" formControlName="sms" ></ion-checkbox>
+      </ion-item>
+    </form>
+    <pre>{{form.value | json}}</pre>
+
+    <div padding>
+      <button ion-button block large outline [disabled]="!form.valid" (click)="submit()">Enviar</button>
+    </div>
+
+    <!--
+      <div margin-top>
+        <button ion-button block color="dark" tappable (click)="register()">
+          SIGN UP
+        </button>
+  
+        <p text-center ion-text color="secondary">Or Sign Up with:</p>
+  
+      </div>
+  -->
+
+
+  </div>
+</ion-content>

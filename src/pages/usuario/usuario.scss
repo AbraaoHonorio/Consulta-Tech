@@ -1,0 +1,15 @@
+page-usuario {
+    // positioning custom icon properly
+.custom-checkbox .icon {
+    font-size: 20px;
+    position: absolute;
+    left: 16px;
+  }
+  
+  // hiding default icon
+  .custom-checkbox i.checkbox-icon {
+    display: none;
+  }
+
+  
+}
