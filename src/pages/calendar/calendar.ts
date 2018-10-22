@@ -16,7 +16,7 @@ import { FormAtendimentoPage } from '../form-atendimento/form-atendimento';
 })
 export class CalendarPage {
   calendarOptions :any ;
-
+   consulta:any = [ ];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
@@ -25,7 +25,8 @@ export class CalendarPage {
   }
 
   initializeCalendarOptions(){
-   
+    this.consulta.push(JSON.parse(localStorage.getItem('consulta')));
+    alert(this.consulta[0].titulo + '->');
     this.calendarOptions = {
       ignoreTimezone: false,
       monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
@@ -52,7 +53,7 @@ export class CalendarPage {
         day: "Dia"
     },
    //   theme:'jquery-ui',
-      height: 450,
+      height: 550,
       fixedWeekCount : false,
       defaultDate: Date(),
       editable: true,
@@ -61,11 +62,11 @@ export class CalendarPage {
        console.log('Date: ' + date.format());
       },
       eventLimit: true, // allow "more" link when too many events
-      events : [
-        {
-          title: 'All Day Event',
-          start: new Date(),
-          end: new Date(),
+      events : [],/* this.load(),
+       [{
+          title: consulta.titulo,
+          start: consulta.dataConsulta,
+          end: consulta.dataConsulta,
         },
         {
           title: 'Long Event',
@@ -116,14 +117,23 @@ export class CalendarPage {
           title: 'Click for Google',
           url: 'http://google.com/',
           start: '2018-10-28'
-        }
-      ],
+      ],}*/
       eventClick: function(calEvent, jsEvent, view) {
                 console.log(calEvent);
                 localStorage.setItem( 'EventData', calEvent.title );
                  window.location.assign('#/result');
             }
     };  
+
+      this.calendarOptions.events.push({
+        title: this.consulta[0].titulo,
+        start: this.consulta[0].dataConsulta
+      });
+   
+  }
+
+  load() {
+    return this.consulta;
   }
 
   goToForm(){
