@@ -31,9 +31,9 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Home', component:'CalendarPage', icon: 'home'},
-      {title: 'Atendimento', component:'CalendarPage', icon: 'clipboard'},
-      {title: 'Consulta', component: 'ClientesPage', icon: 'contacts'},
-      {title: 'Finaças', component: 'CalendarPage', icon: 'cash'},
+      {title: 'Cadastro de Consulta', component:'FormAtendimentoPage', icon: 'clipboard'},
+      {title: 'Atendimento', component: 'FormAvaliacaoPage', icon: 'contacts'},
+      {title: 'Finanças', component: 'FinancasPage', icon: 'cash'},
 
     ];
     this.menuConfiguracao =  {title: 'Configuração', component: CalendarPage, icon: 'construct'};
