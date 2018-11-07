@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title text-center class="oleo-script">Paciente</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="fechar()">
+      <button ion-button icon-only (click)="close()">
         <ion-icon name="close"></ion-icon>
       </button>
       <button ion-button icon-only (click)="showSendPhoto()">
@@ -98,13 +98,15 @@
         <ion-checkbox color="secondary" checked="false" formControlName="sms" ></ion-checkbox>
       </ion-item>
     </form>
-    <pre>{{form.value | json}}</pre>
 
     <div padding>
       <button ion-button block large outline [disabled]="!form.valid" (click)="submit()">Enviar</button>
     </div>
 
     <!--
+
+          <pre>{{form.value | json}}</pre>
+
       <div margin-top>
         <button ion-button block color="dark" tappable (click)="register()">
           SIGN UP

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
-import { ResultPage } from '../result/result';
+import { NavController, IonicPage} from 'ionic-angular';
 import { FormAtendimentoPage } from '../form-atendimento/form-atendimento';
 
 /**
@@ -9,24 +8,29 @@ import { FormAtendimentoPage } from '../form-atendimento/form-atendimento';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+@IonicPage()
 @Component({
   selector: 'page-calendar',
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
   calendarOptions :any ;
-   consulta:any = [ ];
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  consulta:any = [ ];
+
+
+  constructor(public navCtrl: NavController) {
   }
 
   ionViewWillLoad() {
     this.initializeCalendarOptions();
   }
 
+
+  
+
   initializeCalendarOptions(){
-    this.consulta.push(JSON.parse(localStorage.getItem('consulta')));
-    alert(this.consulta[0].titulo + '->');
+  //  this.consulta.push(JSON.parse(localStorage.getItem('consulta')));
+   // alert(this.consulta[0].titulo + '->');
     this.calendarOptions = {
       ignoreTimezone: false,
       monthNames: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
@@ -62,7 +66,11 @@ export class CalendarPage {
        console.log('Date: ' + date.format());
       },
       eventLimit: true, // allow "more" link when too many events
-      events : [],/* this.load(),
+      events : [ {
+        title: 'Long Event',
+        start: '2018-11-07',
+        end: '2018-11-10'
+      }],/* this.load(),
        [{
           title: consulta.titulo,
           start: consulta.dataConsulta,
@@ -125,10 +133,10 @@ export class CalendarPage {
             }
     };  
 
-      this.calendarOptions.events.push({
+     /* this.calendarOptions.events.push({
         title: this.consulta[0].titulo,
         start: this.consulta[0].dataConsulta
-      });
+      });*/
    
   }
 
@@ -137,7 +145,10 @@ export class CalendarPage {
   }
 
   goToForm(){
-    this.navCtrl.push(FormAtendimentoPage);
+    this.navCtrl.push('FormAtendimentoPage');
   }
+
+
+ 
 
 }

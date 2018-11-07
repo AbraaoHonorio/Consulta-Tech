@@ -68,13 +68,13 @@ export class UsuarioPage {
     console.log("ionViewDidLoad UsuarioPage");
   }
 
-  fechar() {
+  close() {
     this.viewCtrl.dismiss();
   }
 
   showSendPhoto() {
     this.viewCtrl.dismiss();
-    let modal = this.modalCtrl.create(TakePicturePage);
+    let modal = this.modalCtrl.create('TakePicturePage');
     modal.present();
   }
 

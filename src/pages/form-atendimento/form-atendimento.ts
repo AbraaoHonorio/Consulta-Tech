@@ -75,7 +75,7 @@ export class FormAtendimentoPage {
   
   searchUser() {
    // alert(this.cpf);
-    let profileModal = this.modalCtrl.create(UsuarioPage, {
+    let profileModal = this.modalCtrl.create('UsuarioPage', {
       cpf: this.cpf
     });
     profileModal.present();

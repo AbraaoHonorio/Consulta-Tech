@@ -1,4 +1,4 @@
-import { UsuarioPage } from "./../usuario/usuario";
+//import { UsuarioPage } from "./../usuario/usuario";
 import { Component } from "@angular/core";
 import { IonicPage, ViewController, ModalController } from "ionic-angular";
 
@@ -30,7 +30,7 @@ export class TakePicturePage {
     video.classList.add("flash");
     setTimeout(() => {
       this.viewCtrl.dismiss();
-      const modal = this.modalCtrl.create(UsuarioPage, {
+      const modal = this.modalCtrl.create('UsuarioPage', {
         photo: canvas.toDataURL()
       });
       modal.present();
@@ -51,6 +51,12 @@ modal.present();*/
   }
 
   dimiss() {
+    setTimeout(() => {
+      this.viewCtrl.dismiss();
+      const modal = this.modalCtrl.create('UsuarioPage');
+    modal.present();
+    }, 800);
     this.viewCtrl.dismiss();
+   
   }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, MenuController, ToastController } from 'ionic-angular';
-import { CalendarPage } from '../calendar/calendar';
+//import { CalendarPage } from '../calendar/calendar';
 
 /**
  * Generated class for the LoginPage page.
@@ -22,12 +22,12 @@ export class LoginPage {
 
   // go to register page
   register() {
-    this.nav.setRoot(CalendarPage);
+    this.nav.setRoot('CalendarPage');
   }
 
   // login and go to home page
   login() {
-    this.nav.setRoot(CalendarPage);
+    this.nav.setRoot('CalendarPage');
   }
 
   forgotPass() {

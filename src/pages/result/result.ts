@@ -1,7 +1,7 @@
-import { LoginPage } from './../login/login';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CalendarPage } from '../calendar/calendar';
+
 
 @IonicPage()
 @Component({
@@ -24,8 +24,9 @@ export class ResultPage {
   }
 
   homePage(){
-   window.location.assign('#/home'); 
-   
+   window.location.assign('#/CalendarPage'); 
+  //this.navCtrl.setRoot(CalendarPage);
+
   }
 
 

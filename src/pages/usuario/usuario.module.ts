@@ -1,13 +1,19 @@
 import { NgModule } from '@angular/core';
-import { IonicPageModule } from 'ionic-angular';
+import { IonicPageModule} from 'ionic-angular';
 import { UsuarioPage } from './usuario';
-
+import { BrMaskerModule } from 'brmasker-ionic-3';
+ 
 @NgModule({
-  declarations: [
-    UsuarioPage,
-  ],
-  imports: [
-    IonicPageModule.forChild(UsuarioPage),
-  ],
-})
-export class UsuarioPageModule {}
+    declarations: [
+      UsuarioPage,
+    ],
+    imports: [
+      BrMaskerModule,
+      IonicPageModule.forChild(UsuarioPage),
+    ],
+    exports: [
+      UsuarioPage
+    ],
+   
+  })
+  export class LoginPageModule {}

@@ -39,12 +39,13 @@ $colors: (
   secondary:  #5bb7f4,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+  green:      #008000	
 );
 
 $font-size-base:  18px;
 $checkbox-ios-icon-size:	300px;
-    $checkbox-ios-item-start-margin-top: 500px;	
+$checkbox-ios-item-start-margin-top: 500px;	
 
 // App iOS Variables
 // --------------------------------------------------
@@ -88,5 +89,4 @@ $checkbox-ios-icon-size:	300px;
 // Fonts
 // --------------------------------------------------
 
-@import "roboto";
-@import "noto-sans";
+//@import "roboto";

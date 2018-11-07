@@ -1,13 +1,52 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Consulta Tech",
+  "short_name": "Consulta T",
+  "description": "Consulta Tech - efetuando suas consultas",
   "start_url": "index.html",
+  "background_color": "#4e8ef7",
+  "theme_color": "#4e8ef7",
   "display": "standalone",
+  "orientation": "portrait",
+  "splash_pages": null,
   "icons": [{
     "src": "assets/imgs/logo.png",
     "sizes": "512x512",
     "type": "image/png"
-  }],
-  "background_color": "#4e8ef7",
-  "theme_color": "#4e8ef7"
+    }, {
+      "src": "assets/icon/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+]
+
 }
